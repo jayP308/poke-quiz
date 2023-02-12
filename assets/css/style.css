@@ -1,23 +1,75 @@
 * {
-    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 body {
-    background-color: beige;
-    width: 100%;
+    background: url(../images/pokemon-background2.gif) no-repeat;
 }
 
-nav ul a {
+#high-score {
     float: left;
     font-size: 45px;
-    margin: 25px;
+    margin: 30px;
+    margin-top: 60px;
     padding-top: 20px;
     text-decoration: none;
+    color: white;
+    padding: 8px;
+    border: solid;
+    border-width: 10px;
+    border-radius: 10px;
+    border-color: black;
+    background-color: rgb(165, 28, 28);
+}
+
+#high-score:hover {
+    cursor: pointer;
+    background-color: rgb(187, 89, 89);
+    border-color: grey;
 }
 
 #timer {
-    float: right;
     font-size: 45px;
-    padding-right: 75px;
+    float: right;
+    margin: 50px;
+    margin-right: 85px;
+    color: white;
+    padding: 8px;
+    border: solid;
+    border-width: 10px;
+    border-radius: 10px;
+    border-color: black;
+    background-color: rgb(165, 28, 28);
+}
 
+main {
+    text-align: center;
+}
+
+h2 {
+    display: block;
+    font-style: oblique;
+    font-size: 30px;
+    margin-top: 25px;
+    margin-right: 25px;
+    color: white;
+}
+
+#start-quiz {
+    color: white;
+    border: solid;
+    border-radius: 20px;
+    border-width: 5px;
+    border-color: rgb(62, 60, 60);
+    background-color: red;
+    font-family: 'Courier New', Courier, monospace;
+    padding:  8px;
+    font-size: 30px;
+    margin-top: 260px;
+    margin-right: 70px;
+}
+#start-quiz:hover {
+    cursor: pointer;
+    background-color: rgb(187, 89, 89);
 }

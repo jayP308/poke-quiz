@@ -6,10 +6,14 @@
 
 ## URL
 
-## Screenshots
+## Screensh
+
+Sample Desktop View
+<img src="./assets/images/h4-sample-screenshot.png" />
 
 ## Credits
 
+Junnel R. Padilla, Stackoverflow, mkgifs.com, wallpaperaccess.com
 ## License
 
 MIT License
