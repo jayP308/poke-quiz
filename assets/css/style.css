@@ -76,8 +76,65 @@ h2 {
 
 @media screen and (max-width: 996px) {
     body {
-        background: url(../images/pokemon-bg2.webp) no-repeat;
-        background-position-x: center;
-        height: 100px;
+        background: url(../images/pokemon-bg3.jpeg) no-repeat;
+        background-size: cover;
+    }
+
+    main {
+        position: absolute;
+        top: 5;
+        left: 2;
+        margin-top: 300px;
+        margin-left: 100px;
+    }
+
+    h2 {
+        display: block;
+        font-style: oblique;
+        font-size: 25px;
+        margin-top: 25px;
+        margin-right: 25px;
+        color: white;
+    }
+
+    #high-score {
+        float: left;
+        font-size: 40px;
+        margin: 30px;
+        margin-top: 1505px;
+        margin-left: 300px;
+        padding-top: 20px;
+        text-decoration: none;
+        color: white;
+        padding: 8px;
+        border: solid;
+        border-width: 10px;
+        border-radius: 10px;
+        border-color: black;
+        background-color: rgb(165, 28, 28);
+    }
+
+    #high-score:active {
+        cursor: pointer;
+        background-color: rgb(187, 89, 89);
+        border-color: grey;
+    }
+
+    #timer {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 40px;
+        float: right;
+        margin: 50px;
+        margin-right: 85px;
+        margin-bottom: 25px;
+        color: white;
+        padding: 8px;
+        border: solid;
+        border-width: 10px;
+        border-radius: 10px;
+        border-color: black;
+        background-color: rgb(165, 28, 28);
     }
 }

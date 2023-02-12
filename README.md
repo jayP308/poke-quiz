@@ -13,7 +13,7 @@ Sample Desktop View
 
 ## Credits
 
-Junnel R. Padilla, Stackoverflow, mkgifs.com, wallpaperaccess.com
+Junnel R. Padilla, Stackoverflow, mkgifs.com, wallpaperaccess.com, www.deviantart.com
 ## License
 
 MIT License
