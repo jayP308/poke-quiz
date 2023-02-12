@@ -9,7 +9,7 @@
 ## Screensh
 
 Sample Desktop View
-<img src="./assets/images/h4-sample-screenshot.png" />
+<img src="../images/h4-sample-screeshot.png" />
 
 ## Credits
 
