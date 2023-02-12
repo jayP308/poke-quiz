@@ -11,6 +11,9 @@
 Sample Desktop View
 <img src="../images/h4-sample-screeshot.png" />
 
+Sample Phone View
+<img src="./assets/images/h4-sample-phone-view.png" />
+
 ## Credits
 
 Junnel R. Padilla, Stackoverflow, mkgifs.com, wallpaperaccess.com, www.deviantart.com
