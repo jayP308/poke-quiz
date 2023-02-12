@@ -9,7 +9,7 @@
 ## Screenshots
 
 Sample Desktop View
-<img src="../images/h4-sample-screeshot.png" />
+<img src="./assets/images/sample-desktop-view.png" />
 
 Sample Phone View
 <img src="./assets/images/h4-sample-phone-view.png" />
