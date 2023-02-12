@@ -73,3 +73,11 @@ h2 {
     cursor: pointer;
     background-color: rgb(187, 89, 89);
 }
+
+@media screen and (max-width: 996px) {
+    body {
+        background: url(../images/pokemon-bg2.webp) no-repeat;
+        background-position-x: center;
+        height: 100px;
+    }
+}

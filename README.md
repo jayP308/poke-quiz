@@ -6,7 +6,7 @@
 
 ## URL
 
-## Screensh
+## Screenshots
 
 Sample Desktop View
 <img src="../images/h4-sample-screeshot.png" />
