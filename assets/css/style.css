@@ -5,6 +5,7 @@
 
 body {
     background: url(../images/pokemon-background2.gif) no-repeat;
+    background-size: cover;
 }
 
 #high-score {
