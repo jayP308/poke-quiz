@@ -87,8 +87,8 @@ h2 {
         position: absolute;
         top: 5;
         left: 2;
-        margin-top: 300px;
-        margin-left: 350px;
+        margin-top: 475px;
+        margin-left: 250px;
     }
 
     h2 {
@@ -104,8 +104,8 @@ h2 {
         float: left;
         font-size: 40px;
         margin: 30px;
-        margin-top: 1490px;
-        margin-left: 280px;
+        margin-top: 1480px;
+        margin-left: 290px;
         padding-top: 20px;
         text-decoration: none;
         color: white;
@@ -140,18 +140,5 @@ h2 {
         border-color: black;
         background-color: rgb(165, 28, 28);
     }
-
-    #start-quiz {
-        color: white;
-        border: solid;
-        border-radius: 20px;
-        border-width: 5px;
-        border-color: rgb(62, 60, 60);
-        background-color: red;
-        font-family: 'Courier New', Courier, monospace;
-        padding:  8px;
-        font-size: 30px;
-        margin-top: 440px;
-        margin-right: 70px;
-    }
 }
+  
