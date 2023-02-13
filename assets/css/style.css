@@ -69,10 +69,13 @@ h2 {
     margin-top: 260px;
     margin-right: 70px;
 }
+
 #start-quiz:hover {
     cursor: pointer;
     background-color: rgb(187, 89, 89);
 }
+
+
 
 @media screen and (max-width: 996px) {
     body {
@@ -85,7 +88,7 @@ h2 {
         top: 5;
         left: 2;
         margin-top: 300px;
-        margin-left: 100px;
+        margin-left: 200px;
     }
 
     h2 {
@@ -101,7 +104,7 @@ h2 {
         float: left;
         font-size: 40px;
         margin: 30px;
-        margin-top: 1505px;
+        margin-top: 1490px;
         margin-left: 300px;
         padding-top: 20px;
         text-decoration: none;
