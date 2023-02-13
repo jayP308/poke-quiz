@@ -17,7 +17,9 @@ body {
     margin-top: 60px;
     padding-top: 20px;
     text-decoration: none;
-    color: white;
+    font-family: 'Pokemon Solid', sans-serif;
+    -webkit-text-stroke: 2px rgb(70, 0, 248);
+    color: yellow;
     padding: 8px;
     border: solid;
     border-width: 10px;
@@ -37,17 +39,18 @@ body {
     float: right;
     margin: 50px;
     margin-right: 85px;
-    color: white;
+    font-family: 'Pokemon Solid', sans-serif;
+    -webkit-text-stroke: 2px rgb(70, 0, 248);
+    color: yellow;
     padding: 8px;
-    border: solid;
-    border-width: 10px;
-    border-radius: 10px;
-    border-color: black;
-    background-color: rgb(165, 28, 28);
 }
 
 main {
+    position: absolute;
+    top: 5;
+    left: 2;
     text-align: center;
+    margin-left: 675px;
 }
 
 h2 {
@@ -64,17 +67,18 @@ h2 {
 
 
 #start-quiz {
-    color: white;
+    color: yellow;
     border: solid;
     border-radius: 20px;
     border-width: 5px;
     border-color: rgb(62, 60, 60);
     background-color: red;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Pokemon Solid', sans-serif;
+    -webkit-text-stroke: 2px rgb(70, 0, 248);
     padding:  8px;
     font-size: 30px;
-    margin-top: 260px;
-    margin-right: 70px;
+    margin-top: 240px;
+    margin-right: 20px;
 }
 
 #start-quiz:hover {
@@ -116,7 +120,7 @@ h2 {
         margin-left: 290px;
         padding-top: 20px;
         text-decoration: none;
-        color: white;
+        color: yellow; 
         padding: 8px;
         border: solid;
         border-width: 10px;
@@ -140,7 +144,7 @@ h2 {
         margin: 50px;
         margin-right: 85px;
         margin-bottom: 25px;
-        color: white;
+        color: yellow;
         padding: 8px;
         border: solid;
         border-width: 10px;
@@ -150,14 +154,15 @@ h2 {
     }
 
     #start-quiz {
-        color: white;
+        color: yellow;
         border: solid;
         border-radius: 20px;
         border-width: 5px;
         border-color: rgb(62, 60, 60);
         background-color: red;
-        font-family: 'Courier New', Courier, monospace;
-        padding:  8px;
+        font-family: 'Pokemon Solid', sans-serif;
+        -webkit-text-stroke: 3px rgb(70, 0, 248);
+        padding:  10px;
         font-size: 50px;
         margin-top: 240px;
         margin-right: 70px;
