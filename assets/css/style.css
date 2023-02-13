@@ -87,14 +87,14 @@ h2 {
         position: absolute;
         top: 5;
         left: 2;
-        margin-top: 475px;
-        margin-left: 250px;
+        margin-top: 425px;
+        margin-left: 100px;
     }
 
     h2 {
         display: block;
         font-style: oblique;
-        font-size: 25px;
+        font-size: 40px;
         margin-top: 25px;
         margin-right: 25px;
         color: white;
