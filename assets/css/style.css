@@ -8,77 +8,70 @@
 body {
     background: url(../images/pokemon-background2.gif) no-repeat;
     background-size: cover;
+    background-position: fixed;
 }
 
 #high-score {
     float: left;
-    font-size: 45px;
-    margin: 30px;
-    margin-top: 60px;
-    padding-top: 20px;
-    text-decoration: none;
-    font-family: 'Pokemon Solid', sans-serif;
+    font: 30px/1 'Pokemon Solid', sans-serif;
     -webkit-text-stroke: 2px rgb(70, 0, 248);
     color: yellow;
     padding: 8px;
-    border: solid;
-    border-width: 10px;
+    border: solid 10px black;
     border-radius: 10px;
-    border-color: black;
     background-color: rgb(165, 28, 28);
+    margin: 30px 0 0 30px;
+    text-decoration: none;
 }
 
-#high-score:hover {
+#high-score:hover, #high-score:active {
     cursor: pointer;
     background-color: rgb(187, 89, 89);
     border-color: grey;
 }
 
 #timer {
-    font-size: 45px;
-    float: right;
-    margin: 50px;
-    margin-right: 85px;
-    font-family: 'Pokemon Solid', sans-serif;
+    font: 45px/1 'Pokemon Solid', sans-serif;
     -webkit-text-stroke: 2px rgb(70, 0, 248);
     color: yellow;
     padding: 8px;
+    float: right;
+    margin: 50px 85px 0 0;
 }
 
-main {
+#timer-ball { 
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10%;
+}
+
+ .inst-section {
+    display: none;
     position: absolute;
     top: 5;
     left: 2;
     text-align: center;
-    margin-left: 675px;
+    margin-left: 450px;
 }
 
 h2 {
     display: block;
-    font-style: oblique;
-    font-size: 25px;
-    margin-top: 25px;
-    margin-right: 25px;
-    color: yellow;
-    font-family: 'Pokemon Solid', sans-serif;
+    font: oblique 25px/1 'Pokemon Solid', sans-serif;
     -webkit-text-stroke: 1px rgb(70, 0, 248);
+    color: yellow;
+    margin: 25px 25px 0 0;
 }
-
-
 
 #start-quiz {
     color: yellow;
-    border: solid;
-    border-radius: 20px;
-    border-width: 5px;
-    border-color: rgb(62, 60, 60);
-    background-color: red;
-    font-family: 'Pokemon Solid', sans-serif;
+    font: 30px/1 'Pokemon Solid', sans-serif;
     -webkit-text-stroke: 2px rgb(70, 0, 248);
-    padding:  8px;
-    font-size: 30px;
-    margin-top: 240px;
-    margin-right: 20px;
+    background-color: red;
+    border: solid 5px rgb(62, 60, 60);
+    border-radius: 20px;
+    padding: 8px;
+    margin: 165px 20px 0 0;
 }
 
 #start-quiz:hover {
@@ -86,7 +79,36 @@ h2 {
     background-color: rgb(187, 89, 89);
 }
 
+.questions {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 700px 20px 0 425px;
+} 
 
+#pokemon-sil {
+    width: 8%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 390px 0 0 880px;
+}
+
+#choice-1 button {
+    width: 20%;
+    font: 40px/1 'Pokemon Solid', sans-serif;
+    -webkit-text-stroke: 2px rgb(70, 0, 248);
+    color: yellow;
+    padding: 15px;
+    border: solid 10px black;
+    border-radius: 10px;
+    background-color: rgb(165, 28, 28);
+    margin: 30px 400px 0 30px;
+}
+
+.quest1, .quest2, .quest3, .quest4 {
+    display: none;
+}
 
 @media screen and (max-width: 996px) {
     body {
@@ -94,7 +116,7 @@ h2 {
         background-size: cover;
     }
 
-    main {
+    .inst-section {
         position: absolute;
         top: 5;
         left: 2;
@@ -103,69 +125,33 @@ h2 {
     }
 
     h2 {
-        display: block;
-        -webkit-text-stroke: 2px rgb(70, 0, 248);
         font-size: 35px;
-        margin-top: 25px;
         margin-right: 80px;
-        color: yellow;
-
+        -webkit-text-stroke: 2px rgb(70, 0, 248);
     }
 
     #high-score {
-        float: left;
+        position: absolute;
+        top: 0;
+        right: 0;
         font-size: 40px;
-        margin: 30px;
-        margin-top: 1480px;
-        margin-left: 265px;
-        padding-top: 20px;
-        text-decoration: none;
-        color: yellow; 
-        padding: 8px;
-        border: solid;
-        border-width: 10px;
-        border-radius: 10px;
-        border-color: black;
-        background-color: rgb(165, 28, 28);
-    }
-
-    #high-score:active {
-        cursor: pointer;
-        background-color: rgb(187, 89, 89);
-        border-color: grey;
+        margin: 60px 30px 0 265px;
     }
 
     #timer {
         position: absolute;
         top: 0;
-        right: 0;
-        font-size: 40px;
-        float: right;
-        margin: 50px;
-        margin-right: 85px;
-        margin-bottom: 25px;
-        color: yellow;
-        padding: 8px;
-        border: solid;
-        border-width: 10px;
+        left: 0;
+        font-size: 50px;
+        margin: 125px 100px 100px 90px;
         border-radius: 10px;
-        border-color: black;
-        background-color: rgb(165, 28, 28);
+      
     }
 
     #start-quiz {
-        color: yellow;
-        border: solid;
-        border-radius: 20px;
-        border-width: 5px;
-        border-color: rgb(62, 60, 60);
-        background-color: red;
-        font-family: 'Pokemon Solid', sans-serif;
-        -webkit-text-stroke: 3px rgb(70, 0, 248);
-        padding:  10px;
         font-size: 50px;
         margin-top: 185px;
-        margin-right: 70px;
+        margin-right:70px;
+        border: solid 5px rgb(62, 60, 60);
     }
 }
-  
