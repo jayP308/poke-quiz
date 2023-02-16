@@ -16,7 +16,8 @@ Sample Phone View
 
 ## Credits
 
-Junnel R. Padilla, Stackoverflow, mkgifs.com, wallpaperaccess.com, www.deviantart.com
+Junnel R. Padilla, Stackoverflow, mkgifs.com, wallpaperaccess.com, deviantart.com, myinstants.com, https://www.youtube.com/watch?v=GGZ0VPyOpGw
+
 ## License
 
 MIT License
