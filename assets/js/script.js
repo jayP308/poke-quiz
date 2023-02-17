@@ -1,5 +1,6 @@
 let startQuizBt = document.querySelector("#start-quiz");
 let instructSec = document.querySelector(".inst-section");
+var timeDisplay = document.querySelector('span');
 
 let questionOne = document.querySelector(".quest1");
 let questionTwo = document.querySelector(".quest2");
@@ -33,6 +34,9 @@ let incorrectAns13 = document.getElementById("incorrect-answer13");
 let incorrectAns14 = document.getElementById("incorrect-answer14");
 let incorrectAns15 = document.getElementById("incorrect-answer15");
 
+let timeSeconds = 5;
+let currentScore = 0;
+
 let correctSound = new Audio("correct-ans1.mp3");
 let incorrectSound = new Audio("incorrect-sound1.mp3");
 
@@ -40,13 +44,34 @@ let incorrectSound = new Audio("incorrect-sound1.mp3");
 startQuizBt.addEventListener ("click", () => {
     questionOne.style.visibility = "visible";
     instructSec.style.visibility = "hidden";
+
+    var countDown = setInterval(() => {
+        timeSeconds--;
+        timeDisplay.innerHTML = `${timeSeconds}`;
+
+        if(timeSeconds <= 0) {
+            clearInterval(countDown);
+            incorrectSound.play();
+            swal({
+                title: 'Times Up!', icon: 'error', text: ' ', buttons: false, timer: 2000
+            }).then((tryAgain) =>{
+                correctSound.play();
+                swal({
+                    title: "Your Current Score:" + " " + currentScore, icon: 'success', text: ' ', buttons: 'Try Again!'
+                }).then((timesUp) => {
+                    window.location.reload();
+                })
+            })
+        }
+    }, 1000);
 })
 
 /* ----------------------------------------------Question 1----------------------------------------------------------- */
 correctAns1.addEventListener ('click', ()=> {
     correctSound.play();
+    currentScore += 1000;
     swal ({
-        title: 'Correct', icon: 'success', text: ' ', buttons: false, timer: 1300
+        title: 'Correct', icon: 'success', text: ' ', buttons: false, timer: 1400
     }).then((correct) => {
         questionOne.style.visibility = "hidden";
         questionTwo.style.visibility = "visible";
@@ -56,7 +81,7 @@ correctAns1.addEventListener ('click', ()=> {
 incorrectAns1.addEventListener ('click', () => {
         incorrectSound.play();
         swal ({
-            title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1300
+            title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
         }).then((incorrect) => {
             questionOne.style.visibility = "hidden";
             questionTwo.style.visibility = "visible";
@@ -66,7 +91,7 @@ incorrectAns1.addEventListener ('click', () => {
 incorrectAns2.addEventListener ('click', () => {
     incorrectSound.play();
     swal ({
-        title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1300
+        title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
     }).then((incorrect) => {
         questionOne.style.visibility = "hidden";
         questionTwo.style.visibility = "visible";
@@ -76,7 +101,7 @@ incorrectAns2.addEventListener ('click', () => {
 incorrectAns3.addEventListener ('click', () => {
     incorrectSound.play();
     swal ({
-        title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1300
+        title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
     }).then((incorrect) => {
         questionOne.style.visibility = "hidden";
         questionTwo.style.visibility = "visible";
@@ -86,8 +111,9 @@ incorrectAns3.addEventListener ('click', () => {
 
 correctAns2.addEventListener ('click', ()=> {
     correctSound.play();
+    currentScore += 1000;
     swal ({
-        title: 'Correct', icon: 'success', text: ' ', buttons: false, timer: 1300
+        title: 'Correct', icon: 'success', text: ' ', buttons: false, timer: 1400
     }).then((correct) => {
         questionTwo.style.visibility = "hidden";
         questionThree.style.visibility = "visible";
@@ -97,7 +123,7 @@ correctAns2.addEventListener ('click', ()=> {
 incorrectAns4.addEventListener ('click', () => {
         incorrectSound.play();
         swal ({
-            title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1300
+            title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
         }).then((incorrect) => {
             questionTwo.style.visibility = "hidden";
             questionThree.style.visibility = "visible";
@@ -107,7 +133,7 @@ incorrectAns4.addEventListener ('click', () => {
 incorrectAns5.addEventListener ('click', () => {
     incorrectSound.play();
     swal ({
-        title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1300
+        title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
     }).then((incorrect) => {
         questionTwo.style.visibility = "hidden";
         questionThree.style.visibility = "visible";
@@ -117,7 +143,7 @@ incorrectAns5.addEventListener ('click', () => {
 incorrectAns6.addEventListener ('click', () => {
     incorrectSound.play();
     swal ({
-        title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1300
+        title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
     }).then((incorrect) => {
         questionTwo.style.visibility = "hidden";
         questionThree.style.visibility = "visible";
@@ -127,8 +153,9 @@ incorrectAns6.addEventListener ('click', () => {
 
 correctAns3.addEventListener ("click", ()=> {
     correctSound.play();
+    currentScore += 1000;
     swal ({
-        title: 'Correct', icon: 'success', text: ' ', buttons: false, timer: 1300
+        title: 'Correct', icon: 'success', text: ' ', buttons: false, timer: 1400
     }).then((correct) => {
         questionThree.style.visibility = "hidden";
         questionFour.style.visibility = "visible";
@@ -138,7 +165,7 @@ correctAns3.addEventListener ("click", ()=> {
 incorrectAns7.addEventListener ('click', () => {
         incorrectSound.play();
         swal ({
-            title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1300
+            title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
         }).then((incorrect) => {
             questionThree.style.visibility = "hidden";
             questionFour.style.visibility = "visible";
@@ -148,7 +175,7 @@ incorrectAns7.addEventListener ('click', () => {
 incorrectAns8.addEventListener ('click', () => {
     incorrectSound.play();
     swal ({
-        title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1300
+        title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
     }).then((incorrect) => {
         questionThree.style.visibility = "hidden";
         questionFour.style.visibility = "visible";
@@ -158,7 +185,7 @@ incorrectAns8.addEventListener ('click', () => {
 incorrectAns9.addEventListener ('click', () => {
     incorrectSound.play();
     swal ({
-        title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1300
+        title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
     }).then((incorrect) => {
         questionThree.style.visibility = "hidden";
         questionFour.style.visibility = "visible";
@@ -168,8 +195,9 @@ incorrectAns9.addEventListener ('click', () => {
 
 correctAns4.addEventListener ("click", ()=> {
     correctSound.play();
+    currentScore += 1000;
     swal ({
-        title: 'Correct', icon: 'success', text: ' ', buttons: false, timer: 1300
+        title: 'Correct', icon: 'success', text: ' ', buttons: false, timer: 1400
     }).then((correct) => {
         questionFour.style.visibility = "hidden";
         questionFive.style.visibility = "visible";
@@ -179,7 +207,7 @@ correctAns4.addEventListener ("click", ()=> {
 incorrectAns10.addEventListener ('click', () => {
         incorrectSound.play();
         swal ({
-            title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1300
+            title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
         }).then((incorrect) => {
             questionFour.style.visibility = "hidden";
             questionFive.style.visibility = "visible";
@@ -189,7 +217,7 @@ incorrectAns10.addEventListener ('click', () => {
 incorrectAns11.addEventListener ('click', () => {
     incorrectSound.play();
     swal ({
-        title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1300
+        title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
     }).then((incorrect) => {
         questionFour.style.visibility = "hidden";
         questionFive.style.visibility = "visible";
@@ -199,7 +227,7 @@ incorrectAns11.addEventListener ('click', () => {
 incorrectAns12.addEventListener ('click', () => {
     incorrectSound.play();
     swal ({
-        title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1300
+        title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
     }).then((incorrect) => {
         questionFour.style.visibility = "hidden";
         questionFive.style.visibility = "visible";

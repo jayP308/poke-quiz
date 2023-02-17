@@ -48,12 +48,12 @@ body {
 }
 
  .inst-section {
+    display: none;
     position: absolute;
     top: 5;
     left: 2;
     text-align: center;
     margin-left: 675px;
-    visibility: visible;
 }
 
 h2 {
