@@ -48,7 +48,6 @@ body {
 }
 
  .inst-section {
-    display: none;
     position: absolute;
     top: 5;
     left: 2;
