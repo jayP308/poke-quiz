@@ -2,6 +2,7 @@ let startQuizBt = document.querySelector("#start-quiz");
 let instructSec = document.querySelector(".inst-section");
 let timeDisplay = document.querySelector('span');
 let scoreDisplay = document.querySelector(".score-board");
+let highDisplay = document.getElementById("scores")
 
 let questionOne = document.querySelector(".quest1");
 let questionTwo = document.querySelector(".quest2");
@@ -60,9 +61,10 @@ startQuizBt.addEventListener ("click", () => {
             }).then((tryAgain) =>{
                 scoreSound.play();
                 swal({
-                    title: "Your Current Score:" + " " + currentScore, icon: 'success', text: ' ', buttons: 'Try Again!'
+                    title: "Your Current Score:" + " " + currentScore, icon: 'success', text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit'
                 }).then((timesUp) => {
                     clearInterval(countDown);
+                    highDisplay.innerHTML = timesUp + ":" + " " + currentScore;
                     questionOne.style.visibility = "hidden";
                     questionTwo.style.visibility = "hidden";
                     questionThree.style.visibility = "hidden";
@@ -263,8 +265,15 @@ correctAns5.addEventListener ("click", ()=> {
     swal ({
         title: 'Correct', icon: 'success', text: ' ', buttons: false, timer: 1400
     }).then((correct) => {
-        questionFive.style.visibility = "hidden";
-        scoreDisplay.style.visibility = "visible";
+        swal({
+            title: "Your Current Score:" + " " + currentScore, icon: 'success', text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit'
+        }).then((timesUp) => {
+            scoreSound.play();
+            clearInterval(countDown);
+            highDisplay.innerHTML = timesUp + ":" + " " + currentScore;
+            questionFive.style.visibility = "hidden";
+            scoreDisplay.style.visibility = "visible";
+        })
     })
 })
 
@@ -274,8 +283,15 @@ incorrectAns13.addEventListener ('click', () => {
             title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
         }).then((incorrect) => {
             timeSeconds -= 10;
-            questionFive.style.visibility = "hidden";
-            scoreDisplay.style.visibility = "visible";
+            swal({
+                title: "Your Current Score:" + " " + currentScore, icon: 'success', text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit'
+            }).then((timesUp) => {
+                scoreSound.play();
+                clearInterval(countDown);
+                highDisplay.innerHTML = timesUp + ":" + " " + currentScore;
+                questionFive.style.visibility = "hidden";
+                scoreDisplay.style.visibility = "visible";
+            })
         })
 })
 
@@ -285,8 +301,15 @@ incorrectAns14.addEventListener ('click', () => {
         title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
     }).then((incorrect) => {
         timeSeconds -= 10;
-        questionFive.style.visibility = "hidden";
-        scoreDisplay.style.visibility = "visible";
+        swal({
+            title: "Your Current Score:" + " " + currentScore, icon: 'success', text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit'
+        }).then((timesUp) => {
+            scoreSound.play();
+            clearInterval(countDown);
+            highDisplay.innerHTML = timesUp + ":" + " " + currentScore;
+            questionFive.style.visibility = "hidden";
+            scoreDisplay.style.visibility = "visible";
+        })
     })
 })
 
@@ -296,8 +319,15 @@ incorrectAns15.addEventListener ('click', () => {
         title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
     }).then((incorrect) => {
         timeSeconds -= 10;
-        questionFive.style.visibility = "hidden";
-        scoreDisplay.style.visibility = "visible";
+        swal({
+            title: "Your Current Score:" + " " + currentScore, icon: 'success', text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit'
+        }).then((timesUp) => {
+            scoreSound.play();
+            clearInterval(countDown);
+            highDisplay.innerHTML = timesUp + ":" + " " + currentScore;
+            questionFive.style.visibility = "hidden";
+            scoreDisplay.style.visibility = "visible";
+        })
     })
 })
 })
