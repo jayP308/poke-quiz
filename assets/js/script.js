@@ -3,6 +3,8 @@ let instructSec = document.querySelector(".inst-section");
 let timeDisplay = document.querySelector('span');
 let scoreDisplay = document.querySelector(".score-board");
 let highDisplay = document.getElementById("scores")
+let highScore = document.getElementById("high-score");
+let highScore1 = document.getElementById("high-score1");
 
 let questionOne = document.querySelector(".quest1");
 let questionTwo = document.querySelector(".quest2");
@@ -38,6 +40,7 @@ let incorrectAns15 = document.getElementById("incorrect-answer15");
 
 let timeSeconds = 90;
 let currentScore = 0;
+let savedScores = JSON.parse(localStorage.getItem("data")) || [];
 
 let correctSound = new Audio("./assets/sounds/correct-ans1.mp3");
 let incorrectSound = new Audio("./assets/sounds/incorrect-sound1.mp3");
@@ -258,7 +261,7 @@ incorrectAns12.addEventListener ('click', () => {
 
 /* ----------------------------------------------Question 4----------------------------------------------------------- */
 
-correctAns5.addEventListener ("click", ()=> {
+correctAns5.addEventListener ("click", () => {
     clearInterval(countDown);
     correctSound.play();
     currentScore += 1000;
@@ -267,12 +270,13 @@ correctAns5.addEventListener ("click", ()=> {
     }).then((correct) => {
         swal({
             title: "Your Current Score:" + " " + currentScore, icon: 'success', text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit'
-        }).then((timesUp) => {
+        }).then((timesUp) =>{
             scoreSound.play();
             clearInterval(countDown);
-            highDisplay.innerHTML = timesUp + ":" + " " + currentScore;
             questionFive.style.visibility = "hidden";
             scoreDisplay.style.visibility = "visible";
+            highScore.style.display = "none";
+            highScore1.style.visibility = "visible";
         })
     })
 })
@@ -291,6 +295,8 @@ incorrectAns13.addEventListener ('click', () => {
                 highDisplay.innerHTML = timesUp + ":" + " " + currentScore;
                 questionFive.style.visibility = "hidden";
                 scoreDisplay.style.visibility = "visible";
+                highScore.style.display = "none";
+                highScore1.style.visibility = "visible";
             })
         })
 })
@@ -309,6 +315,8 @@ incorrectAns14.addEventListener ('click', () => {
             highDisplay.innerHTML = timesUp + ":" + " " + currentScore;
             questionFive.style.visibility = "hidden";
             scoreDisplay.style.visibility = "visible";
+            highScore.style.display = "none";
+            highScore1.style.visibility = "visible";
         })
     })
 })
@@ -327,7 +335,14 @@ incorrectAns15.addEventListener ('click', () => {
             highDisplay.innerHTML = timesUp + ":" + " " + currentScore;
             questionFive.style.visibility = "hidden";
             scoreDisplay.style.visibility = "visible";
+            highScore.style.display = "none";
+            highScore1.style.visibility = "visible";
         })
     })
 })
+for(let i =0; i < savedScores.length; i++) {
+    var storeScores = document.createElement("li");
+    storeScores.textContent = savedScores[i];
+    document.getElementById("scores").appendChild(storeScores);
+}
 })
