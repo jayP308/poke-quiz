@@ -5,6 +5,8 @@ let scoreDisplay = document.querySelector(".score-board");
 let highDisplay = document.getElementById("scores")
 let highScore = document.getElementById("high-score");
 let highScore1 = document.getElementById("high-score1");
+let searchBar = document.querySelector("#search-bar");
+var submitButton = document.querySelector("#submit-button");
 
 let questionOne = document.querySelector(".quest1");
 let questionTwo = document.querySelector(".quest2");
@@ -340,9 +342,29 @@ incorrectAns15.addEventListener ('click', () => {
         })
     })
 })
-for(let i =0; i < savedScores.length; i++) {
-    var storeScores = document.createElement("li");
-    storeScores.textContent = savedScores[i];
-    document.getElementById("scores").appendChild(storeScores);
-}
+
+submitButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    var userInput = searchBar.value;
+
+    if(userInput == ""){
+        startSound.play();
+        swal ({
+            title: "Cannot be Blank", icon: "warning", text: " ", buttons: false, timer: 1200
+        })
+    }
+
+    var li = document.createElement("p");
+    if(savedScores.indexOf(userInput) == -1){
+        savedScores.push(userInput);
+        li.textContent = userInput + ":" + " " + currentScore;
+        localStorage.setItem("data", JSON.stringify(savedScores));
+    }
+
 })
+})
+for(let i=0; i < savedScores.length; i++) {
+    let storeMe = document.createElement("p")
+    storeMe.textContent = savedScores[i] + ":" + " " + currentScore;
+    highDisplay.appendChild(storeMe);
+}
