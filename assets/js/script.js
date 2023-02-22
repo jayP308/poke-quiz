@@ -84,9 +84,9 @@ startQuizBt.addEventListener ("click", () => {
 /* ----------------------------------------------Question 1----------------------------------------------------------- */
 correctAns1.addEventListener ('click', ()=> {
     correctSound.play();
-    currentScore += 1000;
+    currentScore++;
     swal ({
-        title: 'Correct', icon: 'success', text: ' ', buttons: false, timer: 1400
+        title: 'Correct', icon: 'success', text: currentScore + "/" + 5, buttons: false, timer: 1400
     }).then((correct) => {
         questionOne.style.visibility = "hidden";
         questionTwo.style.visibility = "visible";
@@ -98,10 +98,10 @@ incorrectAns1.addEventListener ('click', () => {
         swal ({
             title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
         }).then((incorrect) => {
-            timeSeconds -= 10;
             questionOne.style.visibility = "hidden";
             questionTwo.style.visibility = "visible";
         })
+        timeSeconds -= 9;
 })
 
 incorrectAns2.addEventListener ('click', () => {
@@ -109,10 +109,10 @@ incorrectAns2.addEventListener ('click', () => {
     swal ({
         title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
     }).then((incorrect) => {
-        timeSeconds -= 10;
         questionOne.style.visibility = "hidden";
         questionTwo.style.visibility = "visible";
     })
+    timeSeconds -= 9;
 })
 
 incorrectAns3.addEventListener ('click', () => {
@@ -120,22 +120,23 @@ incorrectAns3.addEventListener ('click', () => {
     swal ({
         title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
     }).then((incorrect) => {
-        timeSeconds -= 10;
         questionOne.style.visibility = "hidden";
         questionTwo.style.visibility = "visible";
     })
+    timeSeconds -= 9;
 })
 /* ----------------------------------------------Question 2----------------------------------------------------------- */
 
 correctAns2.addEventListener ('click', ()=> {
     correctSound.play();
-    currentScore += 1000;
+    currentScore++;
     swal ({
-        title: 'Correct', icon: 'success', text: ' ', buttons: false, timer: 1400
+        title: 'Correct', icon: 'success', text: currentScore + "/" + 5, buttons: false, timer: 1400
     }).then((correct) => {
         questionTwo.style.visibility = "hidden";
         questionThree.style.visibility = "visible";
     })
+    
 })
 
 incorrectAns4.addEventListener ('click', () => {
@@ -143,10 +144,10 @@ incorrectAns4.addEventListener ('click', () => {
         swal ({
             title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
         }).then((incorrect) => {
-            timeSeconds -= 10;
             questionTwo.style.visibility = "hidden";
             questionThree.style.visibility = "visible";
         })
+        timeSeconds -= 9;
 })
 
 incorrectAns5.addEventListener ('click', () => {
@@ -154,10 +155,10 @@ incorrectAns5.addEventListener ('click', () => {
     swal ({
         title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
     }).then((incorrect) => {
-        timeSeconds -= 10;
         questionTwo.style.visibility = "hidden";
         questionThree.style.visibility = "visible";
     })
+    timeSeconds -= 9;
 })
 
 incorrectAns6.addEventListener ('click', () => {
@@ -165,18 +166,18 @@ incorrectAns6.addEventListener ('click', () => {
     swal ({
         title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
     }).then((incorrect) => {
-        timeSeconds -= 10;
         questionTwo.style.visibility = "hidden";
         questionThree.style.visibility = "visible";
     })
+    timeSeconds -= 9;
 })
 /* ----------------------------------------------Question 3----------------------------------------------------------- */
 
 correctAns3.addEventListener ("click", ()=> {
     correctSound.play();
-    currentScore += 1000;
+    currentScore++;
     swal ({
-        title: 'Correct', icon: 'success', text: ' ', buttons: false, timer: 1400
+        title: 'Correct', icon: 'success', text: currentScore + "/" + 5, buttons: false, timer: 1400
     }).then((correct) => {
         questionThree.style.visibility = "hidden";
         questionFour.style.visibility = "visible";
@@ -188,10 +189,10 @@ incorrectAns7.addEventListener ('click', () => {
         swal ({
             title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
         }).then((incorrect) => {
-            timeSeconds -= 10;
             questionThree.style.visibility = "hidden";
             questionFour.style.visibility = "visible";
         })
+        timeSeconds -= 9;
 })
 
 incorrectAns8.addEventListener ('click', () => {
@@ -199,10 +200,10 @@ incorrectAns8.addEventListener ('click', () => {
     swal ({
         title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
     }).then((incorrect) => {
-        timeSeconds -= 10;
         questionThree.style.visibility = "hidden";
         questionFour.style.visibility = "visible";
     })
+    timeSeconds -= 9;
 })
 
 incorrectAns9.addEventListener ('click', () => {
@@ -210,18 +211,18 @@ incorrectAns9.addEventListener ('click', () => {
     swal ({
         title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
     }).then((incorrect) => {
-        timeSeconds -= 10;
         questionThree.style.visibility = "hidden";
         questionFour.style.visibility = "visible";
     })
+    timeSeconds -= 9;
 })
 /* ----------------------------------------------Question 4----------------------------------------------------------- */
 
 correctAns4.addEventListener ("click", ()=> {
     correctSound.play();
-    currentScore += 1000;
+    currentScore++;
     swal ({
-        title: 'Correct', icon: 'success', text: ' ', buttons: false, timer: 1400
+        title: 'Correct', icon: 'success', text: currentScore + "/" + 5, buttons: false, timer: 1400
     }).then((correct) => {
         questionFour.style.visibility = "hidden";
         questionFive.style.visibility = "visible";
@@ -233,10 +234,10 @@ incorrectAns10.addEventListener ('click', () => {
         swal ({
             title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
         }).then((incorrect) => {
-            timeSeconds -= 10;
             questionFour.style.visibility = "hidden";
             questionFive.style.visibility = "visible";
         })
+        timeSeconds -= 9;
 })
 
 incorrectAns11.addEventListener ('click', () => {
@@ -244,10 +245,10 @@ incorrectAns11.addEventListener ('click', () => {
     swal ({
         title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
     }).then((incorrect) => {
-        timeSeconds -= 10;
         questionFour.style.visibility = "hidden";
         questionFive.style.visibility = "visible";
     })
+    timeSeconds -= 9;
 })
 
 incorrectAns12.addEventListener ('click', () => {
@@ -255,46 +256,77 @@ incorrectAns12.addEventListener ('click', () => {
     swal ({
         title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
     }).then((incorrect) => {
-        timeSeconds -= 10;
         questionFour.style.visibility = "hidden";
         questionFive.style.visibility = "visible";
     })
+    timeSeconds -= 9;
 })
 
 /* ----------------------------------------------Question 4----------------------------------------------------------- */
 
 correctAns5.addEventListener ("click", () => {
-    clearInterval(countDown);
     correctSound.play();
-    currentScore += 1000;
+    currentScore++;
+    clearInterval(countDown);
     swal ({
-        title: 'Correct', icon: 'success', text: ' ', buttons: false, timer: 1400
+        title: 'Correct', icon: 'success', text: currentScore + "/" + 5, buttons: false, timer: 1400
     }).then((correct) => {
         swal({
-            title: "Your Current Score:" + " " + currentScore, icon: 'success', text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit'
+            title: "Your Current Score:" + " " + currentScore + "/" + "5", icon: 'success', text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit'
         }).then((timesUp) =>{
             scoreSound.play();
-            clearInterval(countDown);
+            for(let i=0; i < timesUp.length; i++){
+                var li = document.createElement("p");
+                var le = document.createElement("p");
+                if(savedScores.indexOf(timesUp) == -1){
+                    savedScores.push(timesUp);
+                    li.textContent = timesUp + ":";
+                    le.textContext = currentScore[i];
+                    localStorage.setItem("data", JSON.stringify(savedScores));
+                }
+            }   
+        
+            for(let i=0; i < savedScores.length; i++) {
+                let storeMe = document.createElement("p");
+                let storeMe1 = document.createElement("p");
+                storeMe.textContent = savedScores[i];
+                storeMe1.textContent = currentScore;
+                highDisplay.appendChild(storeMe);
+                highDisplay.appendChild(storeMe1);
+            }
             questionFive.style.visibility = "hidden";
             scoreDisplay.style.visibility = "visible";
             highScore.style.display = "none";
             highScore1.style.visibility = "visible";
         })
+        
     })
 })
 
 incorrectAns13.addEventListener ('click', () => {
         incorrectSound.play();
+        clearInterval(countDown);
         swal ({
             title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
         }).then((incorrect) => {
-            timeSeconds -= 10;
             swal({
                 title: "Your Current Score:" + " " + currentScore, icon: 'success', text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit'
             }).then((timesUp) => {
                 scoreSound.play();
-                clearInterval(countDown);
-                highDisplay.innerHTML = timesUp + ":" + " " + currentScore;
+
+                for(let i=0; i < timesUp.length; i++){
+                    var li = document.createElement("p");
+                    if(savedScores.indexOf(timesUp) == -1){
+                        savedScores.push(timesUp);
+                        li.textContent = timesUp + ":" + " " + currentScore;
+                        localStorage.setItem("data", JSON.stringify(savedScores));
+                    }
+                }   
+                for(let i=0; i < savedScores.length; i++) {
+                    let storeMe = document.createElement("p")
+                    storeMe.textContent = savedScores[i] + ":" + " " + currentScore[i];
+                    highDisplay.appendChild(storeMe);
+                }
                 questionFive.style.visibility = "hidden";
                 scoreDisplay.style.visibility = "visible";
                 highScore.style.display = "none";
@@ -305,16 +337,32 @@ incorrectAns13.addEventListener ('click', () => {
 
 incorrectAns14.addEventListener ('click', () => {
     incorrectSound.play();
+    clearInterval(countDown);
     swal ({
         title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
     }).then((incorrect) => {
-        timeSeconds -= 10;
         swal({
             title: "Your Current Score:" + " " + currentScore, icon: 'success', text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit'
         }).then((timesUp) => {
             scoreSound.play();
-            clearInterval(countDown);
-            highDisplay.innerHTML = timesUp + ":" + " " + currentScore;
+
+            for(let i=0; i < timesUp.length; i++){
+                var li = document.createElement("p");
+                if(savedScores.indexOf(timesUp) == -1){
+                    savedScores.push(timesUp);
+                    li.textContent = timesUp + ":" + " " + currentScore;
+                    localStorage.setItem("data", JSON.stringify(savedScores));
+                }
+            }   
+            for(let i=0; i < savedScores.length; i++) {
+                let storeMe = document.createElement("p");
+                let storeMe1 = document.createElement("p");
+                storeMe.textContent = savedScores[i] + ":";
+                if(currentScore == 1) {
+                    storeMe1.textContent = currentScore
+                }
+                highDisplay.appendChild(storeMe);
+            }
             questionFive.style.visibility = "hidden";
             scoreDisplay.style.visibility = "visible";
             highScore.style.display = "none";
@@ -325,46 +373,34 @@ incorrectAns14.addEventListener ('click', () => {
 
 incorrectAns15.addEventListener ('click', () => {
     incorrectSound.play();
+    clearInterval(countDown);
     swal ({
         title: 'Incorrect', icon: 'error', text: ' ', buttons: false, timer: 1400
     }).then((incorrect) => {
-        timeSeconds -= 10;
         swal({
             title: "Your Current Score:" + " " + currentScore, icon: 'success', text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit'
         }).then((timesUp) => {
             scoreSound.play();
-            clearInterval(countDown);
-            highDisplay.innerHTML = timesUp + ":" + " " + currentScore;
+
+        for(let i=0; i < timesUp.length; i++){
+            var li = document.createElement("p");
+            if(savedScores.indexOf(timesUp) == -1){
+                savedScores.push(timesUp);
+                li.textContent = timesUp + ":" + " " + currentScore;
+                localStorage.setItem("data", JSON.stringify(savedScores));
+            }
+        }   
+        for(let i=0; i < savedScores.length; i++) {
+            let storeMe = document.createElement("p")
+            storeMe.textContent = savedScores[i];
+            highDisplay.appendChild(storeMe);
+        }
             questionFive.style.visibility = "hidden";
             scoreDisplay.style.visibility = "visible";
             highScore.style.display = "none";
             highScore1.style.visibility = "visible";
         })
     })
-})
-
-submitButton.addEventListener("click", function(event) {
-    event.preventDefault();
-    var userInput = searchBar.value;
-
-    if(userInput == ""){
-        startSound.play();
-        swal ({
-            title: "Cannot be Blank", icon: "warning", text: " ", buttons: false, timer: 1200
-        })
-    }
-
-    var li = document.createElement("p");
-    if(savedScores.indexOf(userInput) == -1){
-        savedScores.push(userInput);
-        li.textContent = userInput + ":" + " " + currentScore;
-        localStorage.setItem("data", JSON.stringify(savedScores));
-    }
 
 })
 })
-for(let i=0; i < savedScores.length; i++) {
-    let storeMe = document.createElement("p")
-    storeMe.textContent = savedScores[i] + ":" + " " + currentScore;
-    highDisplay.appendChild(storeMe);
-}
