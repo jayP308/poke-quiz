@@ -50,6 +50,14 @@ let incorrectSound = new Audio("./assets/sounds/incorrect-sound1.mp3");
 let startSound = new Audio("./assets/sounds/incorrect-sound.mp3");
 let scoreSound = new Audio("./assets/sounds/correct-sound1.mp3");
 
+highScore.addEventListener ( "click", ()=> {
+    let imageUrl = "./assets/images/wrong.webp";
+    swal({
+        title: "Restarting Quiz.......", icon: imageUrl, text: ' ', button: false, timer: 2800
+    }).then((restart) => {
+        window.location.reload();
+    })
+})
 
 startQuizBt.addEventListener ("click", () => {
     questionOne.style.visibility = "visible";
@@ -70,7 +78,7 @@ startQuizBt.addEventListener ("click", () => {
                     title: "Your Current Score:" + " " + currentScore, icon: 'success', text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit'
                 }).then((timesUp) => {
                     clearInterval(countDown);
-                    highDisplay.innerHTML = timesUp + ":" + " " + currentScore;
+                    highDisplay.innerHTML = timesUp + ":" + " " + currentScore + "/" + "5";
                     questionOne.style.visibility = "hidden";
                     questionTwo.style.visibility = "hidden";
                     questionThree.style.visibility = "hidden";
