@@ -41,7 +41,7 @@ let incorrectAns13 = document.getElementById("incorrect-answer13");
 let incorrectAns14 = document.getElementById("incorrect-answer14");
 let incorrectAns15 = document.getElementById("incorrect-answer15");
 
-let timeSeconds = 90;
+let timeSeconds = 5;
 let currentScore = 0;
 let savedScores = JSON.parse(localStorage.getItem("data")) || [];
 
@@ -49,11 +49,12 @@ let correctSound = new Audio("./assets/sounds/correct-ans1.mp3");
 let incorrectSound = new Audio("./assets/sounds/incorrect-sound1.mp3");
 let startSound = new Audio("./assets/sounds/incorrect-sound.mp3");
 let scoreSound = new Audio("./assets/sounds/correct-sound1.mp3");
+let fightSound = new Audio("./assets/sounds/fight-music.mp3");
 
 highScore.addEventListener ("click", ()=> {
     let imageUrl = "./assets/images/wrong.webp";
     swal({
-        title: "Restarting Quiz.......", icon: imageUrl, text: ' ', button: false, closeOnClickOutside: false, timer: 2800
+        title: "Gathering All Pokemons.....", icon: imageUrl, text: ' ', button: false, closeOnClickOutside: false, timer: 2800
     }).then((restart) => {
         window.location.reload();
     })
@@ -62,46 +63,56 @@ highScore.addEventListener ("click", ()=> {
 highScore1.addEventListener ("click", ()=> {
     let imageUrl = "./assets/images/wrong.webp";
     swal({
-        title: "Getting Pokemons Ready....", icon: imageUrl, text: ' ', button: false, closeOnClickOutside: false, timer: 2800
+        title: "Getting All Pokemons Ready....", icon: imageUrl, text: ' ', button: false, closeOnClickOutside: false, timer: 2800
     }).then((restart) => {
         window.location.reload();
     })
 })
 
 startQuizBt.addEventListener ("click", () => {
-    questionOne.style.visibility = "visible";
-    instructSec.style.visibility = "hidden";
-    
-    var countDown = setInterval(() => {
-        timeSeconds--;
-        timeDisplay.innerHTML = `${timeSeconds}`;
+    swal ({
+        title: "Warning: High Volume",
+        icon: "warning",
+        buttons: "Proceed",
+        text: "Sound Effects Can Be Too Loud For Some People. Please Lower Volume Down Before Proceeding Just To Be Safe. Enjoy the Quiz!",
+        closeOnClickOutside: false,
+    }).then ((volume) => {
+        fightSound.play();
+        fightSound.volume = 0.2;
+        questionOne.style.visibility = "visible";
+        instructSec.style.visibility = "hidden";
+        var countDown = setInterval(() => {
+            timeSeconds--;
+            timeDisplay.innerHTML = `${timeSeconds}`;
 
-        if(timeSeconds <= 0) {
-            clearInterval(countDown);
-            startSound.play();
-            swal({
-                title: 'Times Up!', icon: 'error', text: ' ', buttons: false, closeOnClickOutside: false, timer: 2000
-            }).then((tryAgain) =>{
-                scoreSound.play();
+            if(timeSeconds <= 0) {
+                clearInterval(countDown);
+                fightSound.pause();
+                startSound.play();
                 swal({
-                    title: "Your Current Score:" + " " + currentScore, icon: 'success', text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit'
-                }).then((timesUp) => {
-                    clearInterval(countDown);
-                    highDisplay.innerHTML = timesUp + ":" + " " + currentScore + "/" + "5";
-                    questionOne.style.visibility = "hidden";
-                    questionTwo.style.visibility = "hidden";
-                    questionThree.style.visibility = "hidden";
-                    questionFour.style.visibility = "hidden";
-                    questionFive.style.visibility = "hidden";
-                    scoreDisplay.style.visibility = "visible";
+                    title: 'Times Up!', icon: 'error', text: ' ', buttons: false, closeOnClickOutside: false, timer: 2000
+                }).then((tryAgain) =>{
+                    scoreSound.play();
+                    swal({
+                        title: "Your Current Score:" + " " + currentScore, icon: 'success', text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit'
+                    }).then((timesUp) => {
+                        clearInterval(countDown);
+                        highDisplay.innerHTML = timesUp + ":" + " " + currentScore + "/" + "5";
+                        questionOne.style.visibility = "hidden";
+                        questionTwo.style.visibility = "hidden";
+                        questionThree.style.visibility = "hidden";
+                        questionFour.style.visibility = "hidden";
+                        questionFive.style.visibility = "hidden";
+                        scoreDisplay.style.visibility = "visible";
+                    })
                 })
-            })
-        }
-    }, 1000);
-
+            }
+        }, 1000);
+ 
 /* ----------------------------------------------Question 1----------------------------------------------------------- */
 correctAns1.addEventListener ('click', ()=> {
     correctSound.play();
+    correctSound.volume = 0.4;
     currentScore++;
     let imageUrl = "./assets/images/giphy.webp"
     swal ({
@@ -114,6 +125,7 @@ correctAns1.addEventListener ('click', ()=> {
 
 incorrectAns1.addEventListener ('click', () => {
         incorrectSound.play();
+        incorrectSound.volume = 0.4;
         let imageUrl = "./assets/images/wrong1.webp"
         swal ({
             title: 'Incorrect: Its Pikachu', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
@@ -151,6 +163,7 @@ incorrectAns3.addEventListener ('click', () => {
 
 correctAns2.addEventListener ('click', ()=> {
     correctSound.play();
+    correctSound.volume = 0.4;
     currentScore++;
     let imageUrl = "./assets/images/giphy.webp"
     swal ({
@@ -164,6 +177,7 @@ correctAns2.addEventListener ('click', ()=> {
 
 incorrectAns4.addEventListener ('click', () => {
         incorrectSound.play();
+        incorrectSound.volume = 0.4;
         let imageUrl = "./assets/images/wrong1.webp"
         swal ({
             title: 'Incorrect: Its Mewtwo', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
@@ -176,6 +190,7 @@ incorrectAns4.addEventListener ('click', () => {
 
 incorrectAns5.addEventListener ('click', () => {
     incorrectSound.play();
+    incorrectSound.volume = 0.4;
     let imageUrl = "./assets/images/wrong1.webp"
         swal ({
             title: 'Incorrect: Its Mewtwo', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
@@ -188,6 +203,7 @@ incorrectAns5.addEventListener ('click', () => {
 
 incorrectAns6.addEventListener ('click', () => {
     incorrectSound.play();
+    incorrectSound.volume = 0.4;
     let imageUrl = "./assets/images/wrong1.webp"
     swal ({
         title: 'Incorrect: Its Mewtwo', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
@@ -201,6 +217,7 @@ incorrectAns6.addEventListener ('click', () => {
 
 correctAns3.addEventListener ("click", ()=> {
     correctSound.play();
+    correctSound.volume = 0.4;
     currentScore++;
     let imageUrl = "./assets/images/giphy.webp"
     swal ({
@@ -213,6 +230,7 @@ correctAns3.addEventListener ("click", ()=> {
 
 incorrectAns7.addEventListener ('click', () => {
         incorrectSound.play();
+        incorrectSound.volume = 0.4;
         let imageUrl = "./assets/images/wrong1.webp"
         swal ({
             title: 'Incorrect: Its Slowpoke', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
@@ -225,6 +243,7 @@ incorrectAns7.addEventListener ('click', () => {
 
 incorrectAns8.addEventListener ('click', () => {
     incorrectSound.play();
+    incorrectSound.volume = 0.4;
     let imageUrl = "./assets/images/wrong1.webp"
     swal ({
         title: 'Incorrect: Its Slowpoke', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
@@ -237,6 +256,7 @@ incorrectAns8.addEventListener ('click', () => {
 
 incorrectAns9.addEventListener ('click', () => {
     incorrectSound.play();
+    incorrectSound.volume = 0.4;
     let imageUrl = "./assets/images/wrong1.webp"
         swal ({
             title: 'Incorrect: Its Slowpoke', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
@@ -250,6 +270,7 @@ incorrectAns9.addEventListener ('click', () => {
 
 correctAns4.addEventListener ("click", ()=> {
     correctSound.play();
+    correctSound.volume = 0.4;
     currentScore++;
     let imageUrl = "./assets/images/giphy.webp"
     swal ({
@@ -262,6 +283,7 @@ correctAns4.addEventListener ("click", ()=> {
 
 incorrectAns10.addEventListener ('click', () => {
         incorrectSound.play();
+        incorrectSound.volume = 0.4;
         let imageUrl = "./assets/images/wrong1.webp"
         swal ({
             title: 'Incorrect: Its Eevee', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
@@ -274,6 +296,7 @@ incorrectAns10.addEventListener ('click', () => {
 
 incorrectAns11.addEventListener ('click', () => {
     incorrectSound.play();
+    incorrectSound.volume = 0.4;
     let imageUrl = "./assets/images/wrong1.webp";
     swal ({
         title: 'Incorrect: Its Eevee', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
@@ -286,6 +309,7 @@ incorrectAns11.addEventListener ('click', () => {
 
 incorrectAns12.addEventListener ('click', () => {
     incorrectSound.play();
+    incorrectSound.volume = 0.4;
     let imageUrl = "./assets/images/wrong1.webp"
     swal ({
         title: 'Incorrect: Its Eevee', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
@@ -300,6 +324,8 @@ incorrectAns12.addEventListener ('click', () => {
 
 correctAns5.addEventListener ("click", () => {
     correctSound.play();
+    correctSound.volume = 0.4;
+    fightSound.pause();
     currentScore++;
     clearInterval(countDown);
     let imageUrl = "./assets/images/giphy.webp"
@@ -322,6 +348,7 @@ correctAns5.addEventListener ("click", () => {
 
 incorrectAns13.addEventListener ('click', () => {
         incorrectSound.play();
+        incorrectSound.volume = 0.4;
         clearInterval(countDown);
         let imageUrl = "./assets/images/wrong1.webp";
         swal ({
@@ -342,6 +369,7 @@ incorrectAns13.addEventListener ('click', () => {
 
 incorrectAns14.addEventListener ('click', () => {
     incorrectSound.play();
+    incorrectSound.volume = 0.4;
     clearInterval(countDown);
     let imageUrl = "./assets/images/wrong1.webp";
         swal ({
@@ -362,6 +390,7 @@ incorrectAns14.addEventListener ('click', () => {
 
 incorrectAns15.addEventListener ('click', () => {
     incorrectSound.play();
+    incorrectSound.volume = 0.4;
     clearInterval(countDown);
     let imageUrl = "./assets/images/wrong1.webp";
     swal ({
@@ -380,4 +409,5 @@ incorrectAns15.addEventListener ('click', () => {
     })
 
 })
+}) 
 })
