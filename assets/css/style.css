@@ -228,7 +228,7 @@ h2 {
         -webkit-text-stroke: 2px rgb(70, 0, 248);
     }
 
-    #high-score {
+    #high-score, #high-score1 {
         position: absolute;
         top: 0;
         right: 0;
@@ -288,5 +288,33 @@ h2 {
     
     .quest4, .quest1, .quest2, .quest3, .quest5 {
         visibility: hidden;
+    }
+
+    #header-title {
+        position: absolute;
+        top: 5;
+        left: 2;
+        text-align: center;
+        margin-left: 200px;
+        margin-top: 325px;
+        font-size: 55px;
+    }
+    #header-title1 {
+        position: absolute;
+        top: 5;
+        left: 2;
+        text-align: center;
+        margin-left: 350px;
+        margin-top: 325px;
+        font-size: 55px;
+    }
+
+    #timer-ball { 
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 18%;
+        margin-top: 500px;
+        margin-right: 400px;
     }
 }

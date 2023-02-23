@@ -41,7 +41,7 @@ let incorrectAns13 = document.getElementById("incorrect-answer13");
 let incorrectAns14 = document.getElementById("incorrect-answer14");
 let incorrectAns15 = document.getElementById("incorrect-answer15");
 
-let timeSeconds = 90;
+let timeSeconds = 2;
 let currentScore = 0;
 let savedScores = JSON.parse(localStorage.getItem("data")) || [];
 
@@ -94,7 +94,7 @@ startQuizBt.addEventListener ("click", () => {
                 }).then((tryAgain) =>{
                     scoreSound.play();
                     swal({
-                        title: "Your Current Score:" + " " + currentScore, icon: 'success', text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit'
+                        title: "Your Current Score:" + " " + currentScore, icon: 'success', closeOnClickOutside: false, text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit'
                     }).then((timesUp) => {
                         clearInterval(countDown);
                         highDisplay.innerHTML = timesUp + ":" + " " + currentScore + "/" + "5";
@@ -103,7 +103,10 @@ startQuizBt.addEventListener ("click", () => {
                         questionThree.style.visibility = "hidden";
                         questionFour.style.visibility = "hidden";
                         questionFive.style.visibility = "hidden";
+                        highScore.style.display = "none";
+                        highScore1.style.visibility = "visible";
                         scoreDisplay.style.visibility = "visible";
+                        
                     })
                 })
             }
