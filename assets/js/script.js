@@ -62,7 +62,7 @@ highScore.addEventListener ("click", ()=> {
 highScore1.addEventListener ("click", ()=> {
     let imageUrl = "./assets/images/wrong.webp";
     swal({
-        title: "Restarting Quiz.......", icon: imageUrl, text: ' ', button: false, closeOnClickOutside: false, timer: 2800
+        title: "Getting Pokemons Ready....", icon: imageUrl, text: ' ', button: false, closeOnClickOutside: false, timer: 2800
     }).then((restart) => {
         window.location.reload();
     })
@@ -71,7 +71,7 @@ highScore1.addEventListener ("click", ()=> {
 startQuizBt.addEventListener ("click", () => {
     questionOne.style.visibility = "visible";
     instructSec.style.visibility = "hidden";
-
+    
     var countDown = setInterval(() => {
         timeSeconds--;
         timeDisplay.innerHTML = `${timeSeconds}`;
