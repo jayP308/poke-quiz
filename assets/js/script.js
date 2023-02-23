@@ -141,6 +141,7 @@ incorrectAns1.addEventListener ('click', () => {
 
 incorrectAns2.addEventListener ('click', () => {
     incorrectSound.play();
+    incorrectSound.volume = 0.4;
     let imageUrl = "./assets/images/wrong1.webp"
     swal ({
         title: 'Incorrect: Its Pikachu', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
@@ -153,6 +154,7 @@ incorrectAns2.addEventListener ('click', () => {
 
 incorrectAns3.addEventListener ('click', () => {
     incorrectSound.play();
+    incorrectSound.volume = 0.4;
     let imageUrl = "./assets/images/wrong1.webp"
         swal ({
             title: 'Incorrect: Its Pikachu', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
