@@ -50,10 +50,19 @@ let incorrectSound = new Audio("./assets/sounds/incorrect-sound1.mp3");
 let startSound = new Audio("./assets/sounds/incorrect-sound.mp3");
 let scoreSound = new Audio("./assets/sounds/correct-sound1.mp3");
 
-highScore.addEventListener ( "click", ()=> {
+highScore.addEventListener ("click", ()=> {
     let imageUrl = "./assets/images/wrong.webp";
     swal({
-        title: "Restarting Quiz.......", icon: imageUrl, text: ' ', button: false, timer: 2800
+        title: "Restarting Quiz.......", icon: imageUrl, text: ' ', button: false, closeOnClickOutside: false, timer: 2800
+    }).then((restart) => {
+        window.location.reload();
+    })
+})
+
+highScore1.addEventListener ("click", ()=> {
+    let imageUrl = "./assets/images/wrong.webp";
+    swal({
+        title: "Restarting Quiz.......", icon: imageUrl, text: ' ', button: false, closeOnClickOutside: false, timer: 2800
     }).then((restart) => {
         window.location.reload();
     })
@@ -71,7 +80,7 @@ startQuizBt.addEventListener ("click", () => {
             clearInterval(countDown);
             startSound.play();
             swal({
-                title: 'Times Up!', icon: 'error', text: ' ', buttons: false, timer: 2000
+                title: 'Times Up!', icon: 'error', text: ' ', buttons: false, closeOnClickOutside: false, timer: 2000
             }).then((tryAgain) =>{
                 scoreSound.play();
                 swal({
@@ -96,7 +105,7 @@ correctAns1.addEventListener ('click', ()=> {
     currentScore++;
     let imageUrl = "./assets/images/giphy.webp"
     swal ({
-        title: 'Correct: Its Pikachu', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, timer: 1400
+        title: 'Correct: Its Pikachu', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
     }).then((correct) => {
         questionOne.style.visibility = "hidden";
         questionTwo.style.visibility = "visible";
@@ -107,7 +116,7 @@ incorrectAns1.addEventListener ('click', () => {
         incorrectSound.play();
         let imageUrl = "./assets/images/wrong1.webp"
         swal ({
-            title: 'Incorrect: Its Pikachu', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, timer: 1400
+            title: 'Incorrect: Its Pikachu', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
         }).then((incorrect) => {
             questionOne.style.visibility = "hidden";
             questionTwo.style.visibility = "visible";
@@ -119,7 +128,7 @@ incorrectAns2.addEventListener ('click', () => {
     incorrectSound.play();
     let imageUrl = "./assets/images/wrong1.webp"
     swal ({
-        title: 'Incorrect: Its Pikachu', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, timer: 1400
+        title: 'Incorrect: Its Pikachu', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
     }).then((incorrect) => {
         questionOne.style.visibility = "hidden";
         questionTwo.style.visibility = "visible";
@@ -131,7 +140,7 @@ incorrectAns3.addEventListener ('click', () => {
     incorrectSound.play();
     let imageUrl = "./assets/images/wrong1.webp"
         swal ({
-            title: 'Incorrect: Its Pikachu', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, timer: 1400
+            title: 'Incorrect: Its Pikachu', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
     }).then((incorrect) => {
         questionOne.style.visibility = "hidden";
         questionTwo.style.visibility = "visible";
@@ -145,7 +154,7 @@ correctAns2.addEventListener ('click', ()=> {
     currentScore++;
     let imageUrl = "./assets/images/giphy.webp"
     swal ({
-        title: 'Correct: Its Mewtwo', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, timer: 1400
+        title: 'Correct: Its Mewtwo', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
     }).then((correct) => {
         questionTwo.style.visibility = "hidden";
         questionThree.style.visibility = "visible";
@@ -157,7 +166,7 @@ incorrectAns4.addEventListener ('click', () => {
         incorrectSound.play();
         let imageUrl = "./assets/images/wrong1.webp"
         swal ({
-            title: 'Incorrect: Its Mewtwo', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, timer: 1400
+            title: 'Incorrect: Its Mewtwo', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
         }).then((incorrect) => {
             questionTwo.style.visibility = "hidden";
             questionThree.style.visibility = "visible";
@@ -169,7 +178,7 @@ incorrectAns5.addEventListener ('click', () => {
     incorrectSound.play();
     let imageUrl = "./assets/images/wrong1.webp"
         swal ({
-            title: 'Incorrect: Its Mewtwo', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, timer: 1400
+            title: 'Incorrect: Its Mewtwo', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
     }).then((incorrect) => {
         questionTwo.style.visibility = "hidden";
         questionThree.style.visibility = "visible";
@@ -181,7 +190,7 @@ incorrectAns6.addEventListener ('click', () => {
     incorrectSound.play();
     let imageUrl = "./assets/images/wrong1.webp"
     swal ({
-        title: 'Incorrect: Its Mewtwo', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, timer: 1400
+        title: 'Incorrect: Its Mewtwo', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
     }).then((incorrect) => {
         questionTwo.style.visibility = "hidden";
         questionThree.style.visibility = "visible";
@@ -195,7 +204,7 @@ correctAns3.addEventListener ("click", ()=> {
     currentScore++;
     let imageUrl = "./assets/images/giphy.webp"
     swal ({
-        title: 'Correct: Its Slowpoke', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, timer: 1400
+        title: 'Correct: Its Slowpoke', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
     }).then((correct) => {
         questionThree.style.visibility = "hidden";
         questionFour.style.visibility = "visible";
@@ -206,7 +215,7 @@ incorrectAns7.addEventListener ('click', () => {
         incorrectSound.play();
         let imageUrl = "./assets/images/wrong1.webp"
         swal ({
-            title: 'Incorrect: Its Slowpoke', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, timer: 1400
+            title: 'Incorrect: Its Slowpoke', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
         }).then((incorrect) => {
             questionThree.style.visibility = "hidden";
             questionFour.style.visibility = "visible";
@@ -218,7 +227,7 @@ incorrectAns8.addEventListener ('click', () => {
     incorrectSound.play();
     let imageUrl = "./assets/images/wrong1.webp"
     swal ({
-        title: 'Incorrect: Its Slowpoke', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, timer: 1400
+        title: 'Incorrect: Its Slowpoke', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
     }).then((incorrect) => {
         questionThree.style.visibility = "hidden";
         questionFour.style.visibility = "visible";
@@ -230,7 +239,7 @@ incorrectAns9.addEventListener ('click', () => {
     incorrectSound.play();
     let imageUrl = "./assets/images/wrong1.webp"
         swal ({
-            title: 'Incorrect: Its Slowpoke', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, timer: 1400
+            title: 'Incorrect: Its Slowpoke', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
     }).then((incorrect) => {
         questionThree.style.visibility = "hidden";
         questionFour.style.visibility = "visible";
@@ -244,7 +253,7 @@ correctAns4.addEventListener ("click", ()=> {
     currentScore++;
     let imageUrl = "./assets/images/giphy.webp"
     swal ({
-        title: 'Correct: Its Eevee', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, timer: 1400
+        title: 'Correct: Its Eevee', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
     }).then((correct) => {
         questionFour.style.visibility = "hidden";
         questionFive.style.visibility = "visible";
@@ -255,7 +264,7 @@ incorrectAns10.addEventListener ('click', () => {
         incorrectSound.play();
         let imageUrl = "./assets/images/wrong1.webp"
         swal ({
-            title: 'Incorrect: Its Eevee', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, timer: 1400
+            title: 'Incorrect: Its Eevee', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
         }).then((incorrect) => {
             questionFour.style.visibility = "hidden";
             questionFive.style.visibility = "visible";
@@ -267,7 +276,7 @@ incorrectAns11.addEventListener ('click', () => {
     incorrectSound.play();
     let imageUrl = "./assets/images/wrong1.webp";
     swal ({
-        title: 'Incorrect: Its Eevee', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, timer: 1400
+        title: 'Incorrect: Its Eevee', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
     }).then((incorrect) => {
         questionFour.style.visibility = "hidden";
         questionFive.style.visibility = "visible";
@@ -279,7 +288,7 @@ incorrectAns12.addEventListener ('click', () => {
     incorrectSound.play();
     let imageUrl = "./assets/images/wrong1.webp"
     swal ({
-        title: 'Incorrect: Its Eevee', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, timer: 1400
+        title: 'Incorrect: Its Eevee', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
     }).then((incorrect) => {
         questionFour.style.visibility = "hidden";
         questionFive.style.visibility = "visible";
@@ -287,7 +296,7 @@ incorrectAns12.addEventListener ('click', () => {
     timeSeconds -= 9;
 })
 
-/* ----------------------------------------------Question 4----------------------------------------------------------- */
+/* ----------------------------------------------Question 5----------------------------------------------------------- */
 
 correctAns5.addEventListener ("click", () => {
     correctSound.play();
@@ -295,7 +304,7 @@ correctAns5.addEventListener ("click", () => {
     clearInterval(countDown);
     let imageUrl = "./assets/images/giphy.webp"
     swal ({
-        title: 'Correct: Its Gengar', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, timer: 1400
+        title: 'Correct: Its Gengar', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
     }).then((correct) => {
         swal({
             title: "Your Current Score:" + " " + currentScore + "/" + "5", icon: 'success', text: 'Please Enter Your Name' ,content: 'input',  buttons: 'Submit'
@@ -316,7 +325,7 @@ incorrectAns13.addEventListener ('click', () => {
         clearInterval(countDown);
         let imageUrl = "./assets/images/wrong1.webp";
         swal ({
-            title: 'Incorrect: Its Gengar', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, timer: 1400
+            title: 'Incorrect: Its Gengar', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
         }).then((incorrect) => {
             swal({
                 title: "Your Current Score:" + " " + currentScore, icon: 'success', text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit'
@@ -336,7 +345,7 @@ incorrectAns14.addEventListener ('click', () => {
     clearInterval(countDown);
     let imageUrl = "./assets/images/wrong1.webp";
         swal ({
-            title: 'Incorrect: Its Gengar', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, timer: 1400
+            title: 'Incorrect: Its Gengar', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
     }).then((incorrect) => {
         swal({
             title: "Your Current Score:" + " " + currentScore, icon: 'success', text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit'
@@ -356,7 +365,7 @@ incorrectAns15.addEventListener ('click', () => {
     clearInterval(countDown);
     let imageUrl = "./assets/images/wrong1.webp";
     swal ({
-        title: 'Incorrect: Its Gengar', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, timer: 1400
+        title: 'Incorrect: Its Gengar', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
     }).then((incorrect) => {
         swal({
             title: "Your Current Score:" + " " + currentScore, icon: 'success', text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit'
