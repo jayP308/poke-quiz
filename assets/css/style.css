@@ -413,4 +413,20 @@ h2 {
         margin-top: 500px;
         margin-right: 400px;
     }
+
+    #scores {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: 800px;
+        width: 100%;
+        height: 100px;
+        text-align: center;
+        font-style: oblique;
+        font-size: 40px;
+        -webkit-text-stroke: 2px rgb(70, 0, 248);
+        color: yellow;
+        border-style: none;
+        background-color: transparent;
+    }
 }
