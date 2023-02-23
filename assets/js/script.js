@@ -41,7 +41,7 @@ let incorrectAns13 = document.getElementById("incorrect-answer13");
 let incorrectAns14 = document.getElementById("incorrect-answer14");
 let incorrectAns15 = document.getElementById("incorrect-answer15");
 
-let timeSeconds = 5;
+let timeSeconds = 90;
 let currentScore = 0;
 let savedScores = JSON.parse(localStorage.getItem("data")) || [];
 
