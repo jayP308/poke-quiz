@@ -21,7 +21,7 @@ let correctAns3 = document.querySelector("#correct-answer3");
 let correctAns4 = document.querySelector("#correct-answer4");
 let correctAns5 = document.querySelector("#correct-answer5");
 
-let incorrectAns1 = document.querySelectorAll("#incorrect-answer1");
+let incorrectAns1 = document.getElementById("incorrect-answer1");
 let incorrectAns2 = document.getElementById("incorrect-answer2");
 let incorrectAns3 = document.getElementById("incorrect-answer3");
 
