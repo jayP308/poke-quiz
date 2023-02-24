@@ -50,11 +50,16 @@ let incorrectSound = new Audio("./assets/sounds/incorrect-sound1.mp3");
 let startSound = new Audio("./assets/sounds/incorrect-sound.mp3");
 let scoreSound = new Audio("./assets/sounds/correct-sound1.mp3");
 let fightSound = new Audio("./assets/sounds/fight-music.mp3");
+let endSound = new Audio("./assets/sounds/ending-sound.mp3");
+let pokeSound = new Audio("./assets/sounds/whos-that-pokemon.mp3");
 
 highScore.addEventListener ("click", ()=> {
     let imageUrl = "./assets/images/wrong.webp";
+    pokeSound.play();
+    pokeSound.volume = 0.2;
+    fightSound.pause();
     swal({
-        title: "Gathering All Pokemons.....", icon: imageUrl, text: ' ', button: false, closeOnClickOutside: false, timer: 2800
+        title: "Gathering All Pokemons.....", icon: imageUrl, text: ' ', button: false, closeOnClickOutside: false, timer: 3800
     }).then((restart) => {
         window.location.reload();
     })
@@ -62,8 +67,10 @@ highScore.addEventListener ("click", ()=> {
 
 highScore1.addEventListener ("click", ()=> {
     let imageUrl = "./assets/images/wrong.webp";
+    pokeSound.play();
+    pokeSound.volume = 0.2;
     swal({
-        title: "Getting All Pokemons Ready....", icon: imageUrl, text: ' ', button: false, closeOnClickOutside: false, timer: 2800
+        title: "Getting All Pokemons Ready....", icon: imageUrl, text: ' ', button: false, closeOnClickOutside: false, timer: 3800
     }).then((restart) => {
         window.location.reload();
     })
@@ -92,10 +99,13 @@ startQuizBt.addEventListener ("click", () => {
                 swal({
                     title: 'Times Up!', icon: 'error', text: ' ', buttons: false, closeOnClickOutside: false, timer: 2000
                 }).then((tryAgain) =>{
-                    scoreSound.play();
+                    fightSound.pause();
+                    endSound.play();
+                    endSound.volume = 0.3;
                     swal({
                         title: "Your Current Score:" + " " + currentScore, icon: 'success', closeOnClickOutside: false, text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit'
                     }).then((timesUp) => {
+                        scoreSound.play();
                         clearInterval(countDown);
                         highDisplay.innerHTML = timesUp + ":" + " " + currentScore + "/" + "5";
                         questionOne.style.visibility = "hidden";
@@ -337,6 +347,9 @@ correctAns5.addEventListener ("click", () => {
     swal ({
         title: 'Correct: Its Gengar', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
     }).then((correct) => {
+        fightSound.pause();
+        endSound.play();
+        endSound.volume = 0.3;
         swal({
             title: "Your Current Score:" + " " + currentScore + "/" + "5", icon: 'success', text: 'Please Enter Your Name' ,content: 'input',  buttons: 'Submit'
         }).then((timesUp) =>{
@@ -359,6 +372,9 @@ incorrectAns13.addEventListener ('click', () => {
         swal ({
             title: 'Incorrect: Its Gengar', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
         }).then((incorrect) => {
+            fightSound.pause();
+            endSound.play();
+            endSound.volume = 0.3;
             swal({
                 title: "Your Current Score:" + " " + currentScore, icon: 'success', text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit'
             }).then((timesUp) => {
@@ -380,6 +396,9 @@ incorrectAns14.addEventListener ('click', () => {
         swal ({
             title: 'Incorrect: Its Gengar', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
     }).then((incorrect) => {
+        fightSound.pause();
+        endSound.play();
+        endSound.volume = 0.3;
         swal({
             title: "Your Current Score:" + " " + currentScore, icon: 'success', text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit'
         }).then((timesUp) => {
@@ -401,6 +420,9 @@ incorrectAns15.addEventListener ('click', () => {
     swal ({
         title: 'Incorrect: Its Gengar', icon: imageUrl, text: currentScore + "/" + 5, buttons: false, closeOnClickOutside: false, timer: 1400
     }).then((incorrect) => {
+        fightSound.pause();
+        endSound.play();
+        endSound.volume = 0.3;
         swal({
             title: "Your Current Score:" + " " + currentScore, icon: 'success', text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit'
         }).then((timesUp) => {
