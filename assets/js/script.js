@@ -21,7 +21,7 @@ let correctAns3 = document.querySelector("#correct-answer3");
 let correctAns4 = document.querySelector("#correct-answer4");
 let correctAns5 = document.querySelector("#correct-answer5");
 
-let incorrectAns1 = document.getElementById("incorrect-answer1");
+let incorrectAns1 = document.querySelectorAll("#incorrect-answer1");
 let incorrectAns2 = document.getElementById("incorrect-answer2");
 let incorrectAns3 = document.getElementById("incorrect-answer3");
 
@@ -53,6 +53,7 @@ let fightSound = new Audio("./assets/sounds/fight-music.mp3");
 let endSound = new Audio("./assets/sounds/ending-sound.mp3");
 let pokeSound = new Audio("./assets/sounds/whos-that-pokemon.mp3");
 
+// Reset Quiz Button
 highScore.addEventListener ("click", ()=> {
     let imageUrl = "./assets/images/wrong.webp";
     pokeSound.play();
@@ -65,6 +66,7 @@ highScore.addEventListener ("click", ()=> {
     })
 })
 
+// Play Again Button appears on score page
 highScore1.addEventListener ("click", ()=> {
     let imageUrl = "./assets/images/wrong.webp";
     pokeSound.play();
@@ -92,6 +94,7 @@ startQuizBt.addEventListener ("click", () => {
             timeSeconds--;
             timeDisplay.innerHTML = `${timeSeconds}`;
 
+            // if statement when timer reaches down to zero then will be taken to score page after recording current score
             if(timeSeconds <= 0) {
                 clearInterval(countDown);
                 fightSound.pause();
@@ -122,7 +125,7 @@ startQuizBt.addEventListener ("click", () => {
             }
         }, 1000);
  
-/* ----------------------------------------------Question 1----------------------------------------------------------- */
+// Question 1
 correctAns1.addEventListener ('click', ()=> {
     correctSound.play();
     correctSound.volume = 0.4;
@@ -174,8 +177,8 @@ incorrectAns3.addEventListener ('click', () => {
     })
     timeSeconds -= 9;
 })
-/* ----------------------------------------------Question 2----------------------------------------------------------- */
 
+// Question 2
 correctAns2.addEventListener ('click', ()=> {
     correctSound.play();
     correctSound.volume = 0.4;
@@ -228,8 +231,8 @@ incorrectAns6.addEventListener ('click', () => {
     })
     timeSeconds -= 9;
 })
-/* ----------------------------------------------Question 3----------------------------------------------------------- */
 
+// Question 3 
 correctAns3.addEventListener ("click", ()=> {
     correctSound.play();
     correctSound.volume = 0.4;
@@ -281,8 +284,8 @@ incorrectAns9.addEventListener ('click', () => {
     })
     timeSeconds -= 9;
 })
-/* ----------------------------------------------Question 4----------------------------------------------------------- */
 
+// Question 4
 correctAns4.addEventListener ("click", ()=> {
     correctSound.play();
     correctSound.volume = 0.4;
@@ -335,12 +338,10 @@ incorrectAns12.addEventListener ('click', () => {
     timeSeconds -= 9;
 })
 
-/* ----------------------------------------------Question 5----------------------------------------------------------- */
-
+// Question 5
 correctAns5.addEventListener ("click", () => {
     correctSound.play();
     correctSound.volume = 0.4;
-    fightSound.pause();
     currentScore++;
     clearInterval(countDown);
     let imageUrl = "./assets/images/giphy.webp"
