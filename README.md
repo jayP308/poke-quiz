@@ -1,22 +1,25 @@
 # Pokemon-Quiz
 
-## Description
-
 ## Usage
+If your a pokemon fan then this is the right app for you. This app is a fun and interactive quiz to test your skills if you know your pokemon well. User will be given a series of 5 questions that need to answered in a timely manner. Ready to test your skills? Take the quiz now!
+
+## Description
+This app is contains series of 5 question that will test out pokemon fans out there if they know their pokemon well. It includes a reset quiz button so user can reset the game anytime and not record any scores. Just to be more fun, i added a different type of pokemon sound in each click, when the game is over, and a battle sound while the user is taking the quiz. User will be able to save their score towards the end, as well as when the timer runs out. I taken the accountability to give a warning in the beginning about high volume. This app have different type of CSS styling depending if access through desktop or phone. 
 
 ## URL
+https://jayp308.github.io/poke-quiz/
 
 ## Screenshots
 
-Sample Desktop View
-<img src="./assets/images/sample-desktop-view.png" />
+Desktop View
+<img src="./assets/images/poke-desktopview.png" />
 
-Sample Phone View
-<img src="./assets/images/h4-sample-phone-view.png" />
+Phone View
+<img src="./assets/images/poke-phoneview.png" />
 
 ## Credits
 
-Junnel R. Padilla, Stackoverflow, mkgifs.com, wallpaperaccess.com, deviantart.com, myinstants.com, https://www.youtube.com/watch?v=GGZ0VPyOpGw
+Junnel R. Padilla, Stackoverflow, mkgifs.com, wallpaperaccess.com, deviantart.com, myinstants.com, chatGPT,
 
 ## License
 
