@@ -77,11 +77,10 @@ highScore1.addEventListener ("click", ()=> {
 
 highScore2.addEventListener ("click", ()=> {
     let imageUrl = "./assets/images/wrong.webp";
-    pokeSound.play();
-    pokeSound.volume = 0.2;
     swal({
         title: "Clearing All Scores......", icon: imageUrl, text: ' ', button: false, closeOnClickOutside: false, timer: 3800
     }).then((restart) => {
+        startSound.play();
         localStorage.removeItem("data");
         localStorage.removeItem("data1");
         localStorage.removeItem("data2");
