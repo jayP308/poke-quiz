@@ -12,10 +12,12 @@ https://jayp308.github.io/poke-quiz/
 ## Screenshots
 
 Desktop View
-<img src="./assets/images/poke-desktopview.png" />
+<img src="./assets/images/final-start-page.png" />
+<img src="./assets/images/final-score-board.png" />
 
 Phone View
-<img src="./assets/images/poke-phoneview.png" />
+<img src="./assets/images/final-phone-start.png" />
+<img src="./assets/images/final-phone-score.png" />
 
 ## Credits
 
