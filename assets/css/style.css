@@ -29,7 +29,7 @@ body {
     text-decoration: none;
 }
 
-#high-score1 {
+#high-score1, #high-score2 {
     float: left;
     font: 30px/1 'Pokemon Solid', sans-serif;
     -webkit-text-stroke: 2px rgb(70, 0, 248);
@@ -43,7 +43,8 @@ body {
     visibility: hidden;
 }
 
-#high-score:hover, #high-score:active {
+#high-score:hover, #high-score:active,
+#high-score1:hover, #high-score2:hover {
     cursor: pointer;
     background-color: rgb(187, 89, 89);
     border-color: grey;
@@ -63,9 +64,9 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    width: 18%;
-    margin-top: 300px;
-    margin-right: 790px;
+    width: 25%;
+    margin-top: 235px;
+    margin-right: 720px;
 }
 
  .inst-section {

@@ -6,6 +6,7 @@ let highDisplay = document.getElementById("scores");
 let highDisplay1 = document.getElementById("scores2");
 let highScore = document.getElementById("high-score");
 let highScore1 = document.getElementById("high-score1");
+let highScore2 = document.getElementById("high-score2");
 let searchBar = document.querySelector("#search-bar");
 var submitButton = document.querySelector("#submit-button");
 
@@ -17,8 +18,9 @@ let questionFive = document.querySelector(".quest5");
 
 let timeSeconds = 90;
 let currentScore = 0;
-let currentScore1 = ["0", "1", "2", "3", "4", "5"];
 let savedScores = JSON.parse(localStorage.getItem("data")) || [];
+let savedScores1 = JSON.parse(localStorage.getItem("data1")) || [];
+let savedScores2 = JSON.parse(localStorage.getItem("data2")) || [];
 
 let correctSound = new Audio("./assets/sounds/correct-ans1.mp3");
 let incorrectSound = new Audio("./assets/sounds/incorrect-sound1.mp3");
@@ -28,16 +30,36 @@ let fightSound = new Audio("./assets/sounds/fight-music.mp3");
 let endSound = new Audio("./assets/sounds/ending-sound.mp3");
 let pokeSound = new Audio("./assets/sounds/whos-that-pokemon.mp3");
 
-// Reset Quiz Button
+// Button to direct user to view high scores
 highScore.addEventListener ("click", ()=> {
     let imageUrl = "./assets/images/wrong.webp";
     pokeSound.play();
     pokeSound.volume = 0.2;
     fightSound.pause();
+    timeDisplay = 90;
     swal({
-        title: "Gathering All Pokemons.....", icon: imageUrl, text: ' ', button: false, closeOnClickOutside: false, timer: 3800
+        title: "Viewing High Scores", icon: imageUrl, text: ' ', button: false, closeOnClickOutside: false, timer: 3800
     }).then((restart) => {
-        window.location.reload();
+        scoreSound.play();
+        for (let i=0; i < savedScores.length; i++) {
+            let storeMe = document.createElement("p");
+            let storeMe1 = document.createElement("p");
+            let storeMe2 = document.createElement("p");
+            storeMe.textContent = savedScores[i] + " " + "-" + " " + savedScores2[i] + "/" + "5" + " " + "-" + " " + "(" + savedScores1[i] + "s" + ")";
+            highDisplay.appendChild(storeMe);
+            highDisplay.appendChild(storeMe1);
+            highDisplay.appendChild(storeMe2);
+        }
+        questionOne.style.visibility = "hidden";
+        questionTwo.style.visibility = "hidden";
+        questionThree.style.visibility = "hidden";
+        questionFour.style.visibility = "hidden";
+        questionFive.style.visibility = "hidden";
+        highScore.style.display = "none";
+        highScore1.style.visibility = "visible";
+        highScore2.style.visibility = "visible";
+        scoreDisplay.style.visibility = "visible";
+        instructSec.style.visibility = "hidden";                
     })
 })
 
@@ -53,6 +75,20 @@ highScore1.addEventListener ("click", ()=> {
     })
 })
 
+highScore2.addEventListener ("click", ()=> {
+    let imageUrl = "./assets/images/wrong.webp";
+    pokeSound.play();
+    pokeSound.volume = 0.2;
+    swal({
+        title: "Clearing All Scores......", icon: imageUrl, text: ' ', button: false, closeOnClickOutside: false, timer: 3800
+    }).then((restart) => {
+        localStorage.removeItem("data");
+        localStorage.removeItem("data1");
+        localStorage.removeItem("data2");
+        highDisplay.innerHTML = " ";
+    })
+})
+
 startQuizBt.addEventListener ("click", () => {
     swal ({
         title: "Warning: High Volume",
@@ -65,6 +101,7 @@ startQuizBt.addEventListener ("click", () => {
         fightSound.volume = 0.2;
         questionOne.style.visibility = "visible";
         instructSec.style.visibility = "hidden";
+        highScore.style.display = "none";
         var countDown = setInterval(() => {
             timeSeconds--;
             timeDisplay.innerHTML = `${timeSeconds}`;
@@ -74,6 +111,7 @@ startQuizBt.addEventListener ("click", () => {
                 clearInterval(countDown);
                 fightSound.pause();
                 startSound.play();
+                timeSeconds = 0;
                 swal({
                     title: 'Times Up!', icon: 'error', text: ' ', buttons: false, closeOnClickOutside: false, timer: 2000
                 }).then((tryAgain) =>{
@@ -85,7 +123,24 @@ startQuizBt.addEventListener ("click", () => {
                     }).then((timesUp1) => {
                         scoreSound.play();
                         clearInterval(countDown);
-                        highDisplay.innerHTML = timesUp + ":" + " " + currentScore + "/" + "5";
+                        var li = document.createElement("p");
+                        var le = document.createElement("p");
+                        var la = document.createElement("p");
+                        for( let i = 0; i < timesUp1.length; i++) {
+                        if(savedScores.indexOf(timesUp1) == -1) {
+                            savedScores.push(timesUp1);
+                            li.textContent = savedScores;
+                            localStorage.setItem("data", JSON.stringify(savedScores));
+                            savedScores1.indexOf(timeSeconds)
+                            savedScores1.push(timeSeconds);
+                            le.textContent = savedScores1;
+                            localStorage.setItem("data1", JSON.stringify(savedScores1));
+                            savedScores2.indexOf(currentScore)
+                            savedScores2.push(currentScore);
+                            la.textContent = savedScores2;
+                            localStorage.setItem("data2", JSON.stringify(savedScores2))
+                        } 
+                    }
                         questionOne.style.visibility = "hidden";
                         questionTwo.style.visibility = "hidden";
                         questionThree.style.visibility = "hidden";
@@ -93,8 +148,17 @@ startQuizBt.addEventListener ("click", () => {
                         questionFive.style.visibility = "hidden";
                         highScore.style.display = "none";
                         highScore1.style.visibility = "visible";
+                        highScore2.style.visibility = "visible";
                         scoreDisplay.style.visibility = "visible";
-                        
+                        for (let i=0; i < savedScores.length; i++) {
+                            let storeMe = document.createElement("p");
+                            let storeMe1 = document.createElement("p");
+                            let storeMe2 = document.createElement("p");
+                            storeMe.textContent = savedScores[i] + " " + "-" + " " + savedScores2[i] + "/" + "5" + " " + "-" + " " + "(" + savedScores1[i] + "s" + ")";
+                            highDisplay.appendChild(storeMe);
+                            highDisplay.appendChild(storeMe1);
+                            highDisplay.appendChild(storeMe2);
+                        }
                     })
                 })
             }
@@ -247,14 +311,41 @@ questionFive.addEventListener ("click", function(event) {
             endSound.play();
             endSound.volume = 0.3;
             swal({
-                title: "Your Current Score:" + " " + currentScore + "/" + "5", icon: 'success', text: 'Please Enter Your Name' ,content: 'input',  buttons: 'Submit'
-            }).then((timesUp) =>{
+                title: "Your Current Score:" + " " + currentScore + "/" + "5", icon: 'success', text: 'Please Enter Your Name' ,content: 'input',  buttons: 'Submit', closeOnClickOutside: false,
+            }).then((timesUp2) =>{
                 scoreSound.play();
-                highDisplay.innerHTML = timesUp + ":" + " " + currentScore + "/" + "5";
+                var li = document.createElement("p");
+                var le = document.createElement("p");
+                var la = document.createElement("p");
+                for( let i = 0; i < timesUp2.length; i++) {
+                if(savedScores.indexOf(timesUp2) == -1) {
+                    savedScores.push(timesUp2);
+                    li.textContent = savedScores;
+                    localStorage.setItem("data", JSON.stringify(savedScores));
+                    savedScores1.indexOf(timeSeconds)
+                    savedScores1.push(timeSeconds);
+                    le.textContent = savedScores1;
+                    localStorage.setItem("data1", JSON.stringify(savedScores1));
+                    savedScores2.indexOf(currentScore)
+                    savedScores2.push(currentScore);
+                    la.textContent = savedScores2;
+                    localStorage.setItem("data2", JSON.stringify(savedScores2))
+                } 
+            }
                 questionFive.style.visibility = "hidden";
                 scoreDisplay.style.visibility = "visible";
                 highScore.style.display = "none";
                 highScore1.style.visibility = "visible";
+                highScore2.style.visibility = "visible";
+                for (let i=0; i < savedScores.length; i++) {
+                    let storeMe = document.createElement("p");
+                    let storeMe1 = document.createElement("p");
+                    let storeMe2 = document.createElement("p");
+                    storeMe.textContent = savedScores[i] + " " + "-" + " " + savedScores2[i] + "/" + "5" + " " + "-" + " " + "(" + savedScores1[i] + "s" + ")";
+                    highDisplay.appendChild(storeMe);
+                    highDisplay.appendChild(storeMe1);
+                    highDisplay.appendChild(storeMe2);
+                }
             })
             
         })
@@ -270,25 +361,40 @@ questionFive.addEventListener ("click", function(event) {
                 endSound.play();
                 endSound.volume = 0.3;
                 swal({
-                    title: "Your Current Score:" + " " + currentScore, icon: 'success', text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit'
+                    title: "Your Current Score:" + " " + currentScore, icon: 'success', text: 'Please Enter Your Name' ,content: 'input', buttons: 'Submit', closeOnClickOutside: false,
                 }).then((timesUp2) => {
                     scoreSound.play();
-                    var li = document.createElement("p")
+                    var li = document.createElement("p");
+                    var le = document.createElement("p");
+                    var la = document.createElement("p");
                     for( let i = 0; i < timesUp2.length; i++) {
                     if(savedScores.indexOf(timesUp2) == -1) {
                         savedScores.push(timesUp2);
                         li.textContent = savedScores;
                         localStorage.setItem("data", JSON.stringify(savedScores));
-                    }
+                        savedScores1.indexOf(timeSeconds)
+                        savedScores1.push(timeSeconds);
+                        le.textContent = savedScores1;
+                        localStorage.setItem("data1", JSON.stringify(savedScores1));
+                        savedScores2.indexOf(currentScore)
+                        savedScores2.push(currentScore);
+                        la.textContent = savedScores2;
+                        localStorage.setItem("data2", JSON.stringify(savedScores2))
+                    } 
                 }
                     questionFive.style.visibility = "hidden";
                     scoreDisplay.style.visibility = "visible";
                     highScore.style.display = "none";
                     highScore1.style.visibility = "visible";
+                    highScore2.style.visibility = "visible";
                     for (let i=0; i < savedScores.length; i++) {
                         let storeMe = document.createElement("p");
-                        storeMe.textContent = savedScores[i] + ":" + " " + currentScore +  + "/" + "5";
+                        let storeMe1 = document.createElement("p");
+                        let storeMe2 = document.createElement("p");
+                        storeMe.textContent = savedScores[i] + " " + "-" + " " + savedScores2[i] + "/" + "5" + " " + "-" + " " + "(" + savedScores1[i] + "s" + ")";
                         highDisplay.appendChild(storeMe);
+                        highDisplay.appendChild(storeMe1);
+                        highDisplay.appendChild(storeMe2);
                     }
                 })
             })
